@@ -4,18 +4,31 @@
 // 12821 -> да
 // 23432 -> да
 
+Console.WriteLine("Введите пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-int PalinDrom(int a)
+int num = number;
+void Palindrom(int num)
 {
-    if (a > 100000 || a < 10000)
+    int num1 = number / 10000 % 10;
+    int num2 = number / 1000 % 10;
+    int rev1 = number / 10 % 10;
+    int rev2 = number % 10;
+    int nul = number / 10000;
+
+    if (nul < 1 || nul > 9)
     {
-        return -1;
+        Console.WriteLine("Введите пятизначное число!");
     }
-   else
+    else if (num1 == rev2 && num2 == rev1)
     {
-        if(a % 10 > )
+        Console.WriteLine("Да, это палиндром");
     }
+    else
+    {
+        Console.WriteLine("Нет, это не палиндром");
+    }
+    
 }
+Palindrom(number);
+
